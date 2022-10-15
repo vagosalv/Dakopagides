@@ -6,7 +6,6 @@ function initMap() {
             lat: 39.6225826,
             lng: 19.9367651
         },
-        /* syntetagmenens kerkyras */
         zoom: 11,
     });
 
