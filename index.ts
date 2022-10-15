@@ -10,6 +10,7 @@ function initMap(): void {
         lng: 19.9367651,
       },
       zoom: 11,
+      gestureHandling: "greedy",
     }
   );
 

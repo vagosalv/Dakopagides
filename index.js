@@ -7,6 +7,7 @@ function initMap() {
             lng: 19.9367651
         },
         zoom: 11,
+        gestureHandling: "greedy",
     });
 
     const pagida1 = { lat: 39.624048, lng: 19.897758 }; /* dt-19 */
@@ -27,3 +28,11 @@ function initMap() {
 }
 
 window.initMap = initMap;
+
+google.maps.event.addDomListener(window, 'load', initialize);
+$(window).scroll(function(){
+	//THE HEIGHT, PLUS THE MARGIN OR PADDING IT NEEDS TO BE FULLY COVERED
+	if($(window).scrollTop()<$('#map').height() + 21) 
+		$('#map').css({'transform':'translate(0px,'+$(window).scrollTop()+'px)'});
+  $('h4').html($(window).scrollTop());
+});
