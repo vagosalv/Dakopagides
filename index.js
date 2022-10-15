@@ -15,6 +15,15 @@ function initMap() {
         position: pagida1,
         map: map
     });
+
+    const infowindow = new google.maps.InfoWindow ({
+        content: "<p>Topethesia" + marker.getPosition() + "</p>" +
+        "<p>Dedomena kai periexomeno"+"</p>",
+      });/*Vazoume dedomena sto parathuraki kai me ena div mporoume na kanoume kai css */
+    
+      marker.addListener("click", () => {
+        infowindow.open(map, marker);
+      });
 }
 
 window.initMap = initMap;

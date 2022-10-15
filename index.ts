@@ -24,7 +24,7 @@ function initMap(): void {
     content: "<p>Topethesia" + marker.getPosition() + "</p>",
   });
 
-  google.maps.event.addListener(marker, "click", () => {
+  marker.addListener("click", () => {
     infowindow.open(map, marker);
   });
 
