@@ -28,11 +28,3 @@ function initMap() {
 }
 
 window.initMap = initMap;
-
-google.maps.event.addDomListener(window, 'load', initialize);
-$(window).scroll(function(){
-	//THE HEIGHT, PLUS THE MARGIN OR PADDING IT NEEDS TO BE FULLY COVERED
-	if($(window).scrollTop()<$('#map').height() + 21) 
-		$('#map').css({'transform':'translate(0px,'+$(window).scrollTop()+'px)'});
-  $('h4').html($(window).scrollTop());
-});
