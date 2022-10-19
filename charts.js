@@ -40,3 +40,11 @@ const myChart = new Chart(
     document.getElementById('myChart'),
     config
 );
+
+
+async function getData(){
+    const url = 'DT02-2022-10-17_20_00.csv';
+    const responce = await fetch(url);
+    const tabledata = await responce.text();
+    console.log(tabledata);
+}
