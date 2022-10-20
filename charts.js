@@ -1,28 +1,22 @@
+drawChart();
 
-const labels = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-];
+//orizoume thn sunarthsh
+async function drawChart(){
+    const datapoints = await getData();
 
 const data = {
-    labels: labels,
+    labels: datapoints.date,
     datasets: [{
             label: 'Temperature',
             backgroundColor: 'rgb(255, 99, 132)',
             borderColor: 'rgb(255, 99, 132)',
-            data: [0, 10, 5, 2, 20, 30, 45, 25],
+            data: datapoints.temperature,
         },
         {
             label: 'Humidity',
             borderColor: 'rgb(555, 199, 132)',
             backgroundColor: 'rgb(555, 199, 132)',
-            data: [40, 15, 52, 2, 28, 2, 45, 25],
+            data: datapoints.humidity,
         }
 
     ]
@@ -39,7 +33,7 @@ const config = {
 const myChart = new Chart(
     document.getElementById('myChart'),
     config
-);
+);};
 
 /*diavazei to arxeio csv */
 async function getData(){
@@ -68,9 +62,18 @@ async function getData(){
         humidity.push(humid);
     });
 
+    //ksekinaei ta dedomena apo thn arxh
+    date.shift();
+    temperature.shift();
+    humidity.shift();
+
+    const labelname1 = 'a';
+    const labelname2 = 'a';
+    const labelname3 = 'a';
+
     //elegxos an pernane oi times
     console.log(date);
     console.log(temperature);
     console.log(humidity);
-    return {date, temperature, humidity}
+    return {date, temperature, humidity, labelname1, labelname2, labelname3}
 };

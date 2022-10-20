@@ -34,7 +34,7 @@ header nav{
 }
 
 #myChart{
-    width: 40vh;
-    height: 40vh;
+    width: 500px;
+    height: 500px;
     position: relative;
 }
