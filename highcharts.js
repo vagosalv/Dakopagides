@@ -1,5 +1,5 @@
-document.addEventListener('DOMContentLoaded', async function () {
-    const datapoints = await getData();
+/*document.addEventListener('DOMContentLoaded',  function () {
+    const datapoints =  getData();
     const chart = Highcharts.chart('container-chart', {
         chart: {
             type: 'line'
@@ -8,23 +8,19 @@ document.addEventListener('DOMContentLoaded', async function () {
             text: 'Δεδομενα'
         },
         xAxis: {
-            categories: datapoints.date
+            type: "datetime"
         },
         yAxis: {
             title: {
-                text: 'Βαθμοί'
+                text: null
             }
         },
-        series: [{
-            name: 'Θερμοκρασία',
-            data: datapoints.temperature
-        }, {
-            name: 'Υγρασία',
-            data: datapoints.humidity
-        }]
+        data: {
+            csvURL:
+          "DT02-2022-10-17_20_00.csv"
+        },
     });
 });
-
 
 async function getData(){
     const date = []; //exei thn wra
@@ -66,4 +62,23 @@ async function getData(){
     console.log(temperature);
     console.log(humidity);
     return {date, temperature, humidity, labelname1, labelname2, labelname3}
-};
+};*/
+
+
+Highcharts.chart('container-chart', {
+    chart: {
+        type: 'line'
+    },
+    title: {
+        text: 'Live Data (CSV)'
+    },
+
+    subtitle: {
+        text: 'Data input from a remote CSV file'
+    },
+
+    data: {
+        csvURL: './DT02-2022-10-17_20_00.csv',
+        enablePolling: true
+    }
+});
