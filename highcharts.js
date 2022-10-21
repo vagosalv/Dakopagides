@@ -1,51 +1,31 @@
-
-
-drawChart();
-
-//orizoume thn sunarthsh
-async function drawChart(){
+document.addEventListener('DOMContentLoaded', async function () {
     const datapoints = await getData();
-
-const data = {
-    labels: datapoints.date,
-    datasets: [{
-            label: 'Temperature',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: datapoints.temperature,
+    const chart = Highcharts.chart('container-chart', {
+        chart: {
+            type: 'line'
         },
-        {
-            label: 'Humidity',
-            borderColor: 'rgb(555, 199, 132)',
-            backgroundColor: 'rgb(555, 199, 132)',
-            data: datapoints.humidity,
-        }
+        title: {
+            text: 'Δεδομενα'
+        },
+        xAxis: {
+            categories: datapoints.date
+        },
+        yAxis: {
+            title: {
+                text: 'Βαθμοί'
+            }
+        },
+        series: [{
+            name: 'Θερμοκρασία',
+            data: datapoints.temperature
+        }, {
+            name: 'Υγρασία',
+            data: datapoints.humidity
+        }]
+    });
+});
 
-    ]
-};
 
-const config = {
-    type: 'line',
-    data: data,
-    options: {
-        responsive: true,
-        scales: {
-            yAxes: [{
-                ticks: {
-                    max: 200,
-                    
-                }
-            }]
-        }
-    }
-};
-
-const myChart = new Chart(
-    document.getElementById('myChart'),
-    config
-);};
-
-/*diavazei to arxeio csv */
 async function getData(){
     const date = []; //exei thn wra
     const temperature = []; //thermokrasia
