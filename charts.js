@@ -29,8 +29,7 @@ const config = {
     data: data,
     options: {
         responsive: true,
-    },
-
+    }
 };
 
 const myChart = new Chart(
