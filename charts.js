@@ -29,14 +29,6 @@ const config = {
     data: data,
     options: {
         responsive: true,
-        scales: {
-            yAxes: [{
-                ticks: {
-                    max: 200,
-                    
-                }
-            }]
-        }
     }
 };
 

@@ -1,6 +1,6 @@
 Highcharts.chart('container-chart', {
     chart: {
-        type: 'line'
+        type: 'spline'
     },
     title: {
         text: 'Live Data (CSV)'
@@ -10,20 +10,23 @@ Highcharts.chart('container-chart', {
         text: 'Data input from a remote CSV file'
     },
 
-    rangeSelector: {
-        selected: 4
+    yAxis: {
+        max: 200,
+        title: {
+            enabled: false
+        }
     },
 
-    plotOptions: {
-        series: {
-            showInNavigator: true
-        }
+    tooltip: {
+        split: true,
+        crosshairs: true
     },
 
     data: {
         csvURL: './DT02-2022-10-17_20_00.csv',
         enablePolling: true
     }
+
 });
 
 

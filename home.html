@@ -35,14 +35,21 @@
     </div>
 
     <section class="main_body">
-        <div id="chart-container">
+        <div id="nav-btn">
             <button id="data-btn">Δεδομένα</button>
             <button id="photo-btn">Φωτογραφίες</button>
-            <canvas id="myChart"></canvas>
-            <script src="./charts.js"></script>
-            <div id="container-chart">
+        </div>
+        <div id="chart-container">
+            <canvas id="myChart">
+                <script src="./charts.js"></script>
+            </canvas>
+            
+            <button id="temp-btn">Temperature </button>
+            <button id="humid-btn">Humidity </button>
+            <!--
+            <div id="container-chart" style="height: 600px; width: 800px ">
                 <script src="./highcharts.js"></script>
-            </div>
+            </div>-->
             
             <button onclick="getData()">Push</button>
         </div>

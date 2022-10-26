@@ -35,7 +35,11 @@ header nav{
 }
 
 #chart-container{
-    width: auto;
+    width: 800px;
+}
+
+#container-chart{
+    float: center;
 }
 
 #myChart{
