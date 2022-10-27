@@ -35,10 +35,25 @@ async function drawChart() {
         config
     );
 
-    
+    $('#temp-btn').click(async function() {
+        data.datasets[0].data = datapoints.temperature;
+        data.datasets[1].data = 0;
+        myChart.update();
+        console.log(data.datasets[0]);
+      });
+
+    $('#humid-btn').click(async function() {
+        data.datasets[0].data = 0;
+        data.datasets[1].data = datapoints.humidity;
+        myChart.update();
+        console.log(data.datasets[1]);
+      });
 };
 
-/*diavazei to arxeio csv */
+
+
+
+/*diavazei to arxeio csv kai ksexwrizei ta dedomena */
 async function getData() {
     const date = []; //exei thn wra
     const temperature = []; //thermokrasia
@@ -75,9 +90,9 @@ async function getData() {
     const labelname3 = 'a';
 
     //elegxos an pernane oi times
-    console.log(date);
-    console.log(temperature);
-    console.log(humidity);
+    //console.log(date);
+    //console.log(temperature);
+    //console.log(humidity);
     return {
         date,
         temperature,
