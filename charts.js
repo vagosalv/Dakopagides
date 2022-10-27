@@ -17,6 +17,7 @@ async function drawChart() {
                 borderColor: 'rgb(555, 199, 132)',
                 backgroundColor: 'rgb(555, 199, 132)',
                 data: datapoints.humidity,
+                hidden: true,
             }
 
         ]
@@ -27,6 +28,7 @@ async function drawChart() {
         data: data,
         options: {
             responsive: true,
+            plugins: { legend: { display: false }, }
         }
     };
 
@@ -46,6 +48,7 @@ async function drawChart() {
     $('#humid-btn').click(async function() {
         data.datasets[0].data = 0;
         data.datasets[1].data = datapoints.humidity;
+        data.datasets[1].hidden = false;
         myChart.update();
       });
 };
