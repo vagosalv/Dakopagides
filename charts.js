@@ -1,44 +1,45 @@
-
-
 drawChart();
 
 //orizoume thn sunarthsh
-async function drawChart(){
+async function drawChart() {
     const datapoints = await getData();
 
-const data = {
-    labels: datapoints.date,
-    datasets: [{
-            label: 'Temperature',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: datapoints.temperature,
-        },
-        {
-            label: 'Humidity',
-            borderColor: 'rgb(555, 199, 132)',
-            backgroundColor: 'rgb(555, 199, 132)',
-            data: datapoints.humidity,
+    const data = {
+        labels: datapoints.date,
+        datasets: [{
+                label: 'Temperature',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: datapoints.temperature,
+            },
+            {
+                label: 'Humidity',
+                borderColor: 'rgb(555, 199, 132)',
+                backgroundColor: 'rgb(555, 199, 132)',
+                data: datapoints.humidity,
+            }
+
+        ]
+    };
+
+    const config = {
+        type: 'line',
+        data: data,
+        options: {
+            responsive: true,
         }
+    };
 
-    ]
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
+
+    
 };
-
-const config = {
-    type: 'line',
-    data: data,
-    options: {
-        responsive: true,
-    }
-};
-
-const myChart = new Chart(
-    document.getElementById('myChart'),
-    config
-);};
 
 /*diavazei to arxeio csv */
-async function getData(){
+async function getData() {
     const date = []; //exei thn wra
     const temperature = []; //thermokrasia
     const humidity = []; //exei thn ugrasia
@@ -48,9 +49,9 @@ async function getData(){
     const tabledata = await responce.text();
     //console.log(tabledata);
 
-    const table = tabledata.split('\n');//xwrizoume ta dedomena
+    const table = tabledata.split('\n'); //xwrizoume ta dedomena
     //console.log(table);
-    table.forEach(row=> {
+    table.forEach(row => {
         const column = row.split(','); //spame ta dedomena se grammes
         //console.log(column);
         const time = column[0]; //apomononoume thn wra
@@ -77,5 +78,12 @@ async function getData(){
     console.log(date);
     console.log(temperature);
     console.log(humidity);
-    return {date, temperature, humidity, labelname1, labelname2, labelname3}
+    return {
+        date,
+        temperature,
+        humidity,
+        labelname1,
+        labelname2,
+        labelname3
+    }
 };
