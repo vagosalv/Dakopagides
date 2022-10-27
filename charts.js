@@ -35,18 +35,18 @@ async function drawChart() {
         config
     );
 
+    /*emfanizei mono to temperature */
     $('#temp-btn').click(async function() {
         data.datasets[0].data = datapoints.temperature;
         data.datasets[1].data = 0;
         myChart.update();
-        console.log(data.datasets[0]);
       });
 
+    /*emfanizei mono to humidity */
     $('#humid-btn').click(async function() {
         data.datasets[0].data = 0;
         data.datasets[1].data = datapoints.humidity;
         myChart.update();
-        console.log(data.datasets[1]);
       });
 };
 
