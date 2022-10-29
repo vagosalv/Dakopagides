@@ -9,19 +9,18 @@
     <link rel="stylesheet" type="text/css" href="./style.css" />
     <script type="module" src="./index.js"></script>
 
-    <script src="https://code.highcharts.com/highcharts.js"></script><!--highCharts-->
-    <script src="https://code.highcharts.com/modules/data.js"></script><!--highCharts-->
-    <script src="https://code.highcharts.com/indicators/indicators-all.js"></script>
-    <script src="https://code.highcharts.com/modules/stock-tools.js"></script>
+    <!--<script src="https://code.highcharts.com/highcharts.js"></script>highCharts
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>-->
 
 
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 
-
-    
     <div class="container">
         <nav>
             <ul>
-                <li><a href=""home.html>Log In</a></li>
+                <li><a href="" home.html>Log In</a></li>
             </ul>
         </nav>
     </div>
@@ -30,31 +29,30 @@
 <body>
     <div id="map">
         <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBPerAVk4dsvhGH1Rffkk62IbjsNEtlVk&callback=initMap&v=weekly"
-        defer></script>
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBPerAVk4dsvhGH1Rffkk62IbjsNEtlVk&callback=initMap&v=weekly"
+            defer></script>
     </div>
 
-    <section class="main_body">
+    <div id="main-labels">
         <div id="nav-btn">
             <button id="data-btn">Δεδομένα</button>
             <button id="photo-btn">Φωτογραφίες</button>
+        </div>
+    </div>
+    
+    <div id="chart-main">
+        <div id="chart-legend">
+            <button id="temp-btn">Temperature </button>
+            <button id="humid-btn">Humidity </button>
         </div>
         <div id="chart-container">
             <canvas id="myChart">
                 <script src="./charts.js"></script>
             </canvas>
-            
-            <button id="temp-btn">Temperature </button>
-            <button id="humid-btn">Humidity </button>
-            <!--
-            <div id="container-chart" style="height: 600px; width: 800px ">
-                <script src="./highcharts.js"></script>
-            </div>-->
-            
-            <button onclick="getData()">Push</button>
         </div>
-    </section>
-    
+    </div>
+
+
 </body>
 
 </html>

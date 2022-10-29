@@ -4,13 +4,13 @@
     display: flex;
     overflow: hidden;
     position: relative;
-    z-index: -1;
 }
 
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    display: block;
 }
 
 .container{
@@ -23,7 +23,6 @@ header nav{
     float: right;
     margin-top: 10px;
 }
-
 
 .main_body{
     position: relative;
@@ -45,5 +44,15 @@ header nav{
 #myChart{
     width: 500px;
     height: 500px;
+    position: relative;
+}
+
+#main-labels{
+    background-color: olive;
+}
+
+#nav-btn{
+    padding: 10px;
+    margin: 20px;
     position: relative;
 }
