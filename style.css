@@ -19,11 +19,6 @@ html, body {
     overflow:hidden;
   }
 
-header nav{
-    float: right;
-    margin-top: 10px;
-}
-
 .main_body{
     position: relative;
     display: flex;
@@ -35,16 +30,6 @@ header nav{
 
 #chart-container{
     width: 800px;
-}
-
-#container-chart{
-    float: center;
-}
-
-#myChart{
-    width: 500px;
-    height: 500px;
-    position: relative;
 }
 
 #main-labels{
