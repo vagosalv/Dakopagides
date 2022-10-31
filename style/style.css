@@ -82,7 +82,10 @@ html, body {
     margin-right: auto;
 }
 
-
+.image-dt{
+    width: 50%;
+    height: 50%;
+}
 
 /*tabs*/
 
