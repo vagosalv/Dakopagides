@@ -62,7 +62,7 @@ async function getData() {
     const temperature = []; //thermokrasia
     const humidity = []; //exei thn ugrasia
 
-    const url = 'DT02-2022-10-17_20_00.csv';
+    const url = '/data/DT02-2022-10-17_20_00.csv';
     const responce = await fetch(url);
     const tabledata = await responce.text();
     //console.log(tabledata);
