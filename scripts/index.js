@@ -17,12 +17,13 @@ function initMap() {
 
     const marker = new google.maps.Marker({
         position: pagida1,
-        map: map
+        map: map,
+        title: "DT02"
     });
 
     const infowindow = new google.maps.InfoWindow({
-        content: "<p>Topethesia" + marker.getPosition() + "</p>" +
-            "<p>DT02" + "</p>",
+        content: marker.title + "<p>Topethesia" + marker.getPosition() + "</p>" +
+            "<p> data" + "</p>",
     }); /*Vazoume dedomena sto parathuraki kai me ena div mporoume na kanoume kai css */
 
     marker.addListener("click", () => {
