@@ -72,6 +72,12 @@ html, body {
     position: absolute;
     opacity: 0.15;
     z-index: -1;
+    margin-top: -100px;
+}
+
+.btn{
+    width: 60px;
+    height: 50px;
 }
 
 #temp-btn{
@@ -81,7 +87,7 @@ html, body {
     background-size: contain;
     text-align: left;
     display: inline-block;
-    width: 100px;
+    width: 130px;
 }
 
 #humid-btn{
@@ -91,7 +97,7 @@ html, body {
     background-size: contain;
     text-align: left;
     display: inline-block;
-    width: 80px;
+    width: 110px;
 }
 
 #chart-container{
