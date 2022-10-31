@@ -19,7 +19,7 @@ function initMap() {
 
     const infowindow = new google.maps.InfoWindow ({
         content: "<p>Topethesia" + marker.getPosition() + "</p>" +
-        "<p>Dedomena kai periexomeno"+"</p>",
+        "<p>DT02"+"</p>",
       });/*Vazoume dedomena sto parathuraki kai me ena div mporoume na kanoume kai css */
     
       marker.addListener("click", () => {
