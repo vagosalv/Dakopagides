@@ -1,4 +1,4 @@
-let map;
+let map, heatmap;
 
 function initMap() {
     const map = new google.maps.Map(document.getElementById("map"), {
@@ -9,6 +9,22 @@ function initMap() {
         zoom: 11,
         gestureHandling: "greedy",
     });
+
+    //gia heatmap
+    heatmap = new google.maps.visualization.HeatmapLayer({
+        data: getPoints(),
+        map: map,
+    });
+
+    //gia heatmap
+    function getPoints(){
+        return[
+            {location: new google.maps.LatLng(39.624048,19.897758), weight: 0.5},
+            {location: new google.maps.LatLng(39.624048,19.898758),  weight: 2},
+            new google.maps.LatLng(39.624048,19.898458),
+            new google.maps.LatLng(39.624048,19.898487),  
+        ];
+    }
 
     const pagida1 = { lat: 39.624048, lng: 19.897758 }; /* dt-19 */
 
