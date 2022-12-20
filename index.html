@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dakopagides</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script><!-- xwris auto dn emfanizetai to chart-->
+    <link rel="stylesheet" type="text/css" href="./style/style.css" />
+    <script type="module" src="./scripts/index.js"></script>
+    
+
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="./scripts/tabs.js"></script>
+
+    <div class="container">
+        <h2 id="header">Olive Observer</h2>
+        <hr>
+        <nav>
+            <ul>
+                <li><a href="" home.html>Log In</a></li>
+            </ul>
+        </nav>
+    </div>
+</head>
+
+<body>
+    <div id="map">
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBPerAVk4dsvhGH1Rffkk62IbjsNEtlVk&callback=initMap&v=weekly&libraries=visualization"
+            defer></script>
+    </div>
+
+    <div id="main-labels">
+        <div class="tab" id="nav-btn">
+            <button class="tablinks" id="data-btn" onclick="openTab(event, 'chart-main')">Δεδομένα</button>
+            <button class="tablinks" id="photo-btn" onclick="openTab(event, 'photos-main')">Φωτογραφίες</button>
+        </div>
+    </div>
+    
+    <div id="chart-main" class="tabcontent">
+        <div id="chart-legend">
+            <button class="btn" id="temp-btn">Temperature </button>
+            <button class="btn" id="humid-btn">Humidity </button>
+        </div>
+        <div id="chart-container">
+            <img id="tree" src="./img/single-olive-tree.jpg">
+            <canvas id="myChart">
+                <script src="./scripts/charts.js"></script>
+            </canvas>
+        </div>
+    </div>
+
+    <div id="photos-main" class="tabcontent">
+        <div>
+            <img class="image-dt" src="./data/INTCAM-DT02-2022-10-25_16:45.jpg">
+        </div>
+        
+    </div>
+</body>
+</html>
