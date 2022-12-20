@@ -1,4 +1,4 @@
-let map: google.maps.Map;
+let map: google.maps.Map, heatmap: google.maps.visualization.HeatmapLayer;
 
 
 function initMap(): void {
