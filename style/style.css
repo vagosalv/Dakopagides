@@ -41,7 +41,7 @@ html, body {
 }
 
 #main-labels{
-    background-color: olive;
+    
     padding: 10px;
     margin-top: 15px;
 }
@@ -72,6 +72,32 @@ html, body {
     position: absolute;
     opacity: 0.15;
     z-index: -1;
+    margin-top: -100px;
+}
+
+.btn{
+    width: 60px;
+    height: 50px;
+}
+
+#temp-btn{
+    background-image: url('/img/temp_icon.png');
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-align: left;
+    display: inline-block;
+    width: 130px;
+}
+
+#humid-btn{
+    background-image: url('/img/hum_icon.png');
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-align: left;
+    display: inline-block;
+    width: 110px;
 }
 
 #chart-container{
@@ -82,7 +108,10 @@ html, body {
     margin-right: auto;
 }
 
-
+.image-dt{
+    width: 25%;
+    height: 25%;
+}
 
 /*tabs*/
 
