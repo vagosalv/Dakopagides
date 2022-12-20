@@ -32,12 +32,13 @@ function initMap() {
         map: map,
     });
 
+    heatmap.set("radius", heatmap.get("radius") ? null : 50);
     //gia heatmap
     function getPoints(){
         return[
-            {location: new google.maps.LatLng(39.624048,19.897758), weight: 0.5},
+            {location: new google.maps.LatLng(39.624048,19.897758), weight: 5},
             {location: new google.maps.LatLng(39.624048,19.898758),  weight: 2},
-            new google.maps.LatLng(39.624048,19.898458),
+            new google.maps.LatLng(39.624048,19.899458),
             new google.maps.LatLng(39.624048,19.898487),  
         ];
     }
